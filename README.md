@@ -98,17 +98,17 @@ detection.
 
 Required:
 
-- [Git](https://git-scm.com/downloads)
-- A compiler with C++17 support. Choose one:
-  - [GCC](https://gcc.gnu.org/) 10+ on Linux
-  - [LLVM Clang](https://llvm.org/) 14+ on Linux
-  - [Apple Clang](https://developer.apple.com/xcode/) 17+ on macOS
-  - [MSVC](https://visualstudio.microsoft.com/) 2022 on Windows
-- [CMake 3.24 or later](https://cmake.org)
+* [Git](https://git-scm.com/downloads)
+* A compiler with C++17 support. Choose one:
+  * [GCC](https://gcc.gnu.org/) 10+ on Linux
+  * [LLVM Clang](https://llvm.org/) 14+ on Linux
+  * [Apple Clang](https://developer.apple.com/xcode/) 17+ on macOS
+  * [MSVC](https://visualstudio.microsoft.com/) 2022 on Windows
+* [CMake 3.24 or later](https://cmake.org)
 
 Optional:
 
-- [GNU Make](https://www.gnu.org/software/make/), for shorter commands. Every
+* [GNU Make](https://www.gnu.org/software/make/), for shorter commands. Every
   required task also has direct CMake and CTest commands. Make may be
   unavailable on Windows.
 
@@ -150,6 +150,26 @@ If a command reports a missing compiler or CMake, install that prerequisite
 and run the setup commands again.
 
 Setup is complete when CTest reports `100% tests passed`.
+
+## Work on the kata
+
+Implement the exercises in `mars_rover.h`. The initial behavior is covered by
+`test_mars_rover.cpp`.
+
+Run the tests after each change. Use Make when it is installed:
+
+```console
+make test
+```
+
+Otherwise, use CMake and CTest directly:
+
+```console
+cmake --build build --config Debug
+ctest --test-dir build --build-config Debug --output-on-failure
+```
+
+Continue when CTest reports `100% tests passed`.
 
 ## Make command reference
 
