@@ -18,27 +18,27 @@ test-driven development.
 
 As a NASA engineer, you are part of the team that explores Mars by sending
 remotely controlled vehicles to the planet's surface. You need to develop a
-control software that translates the commands sent from Earth to instructions
-that the rover understands.
+control system that translates commands sent from Earth into instructions that
+the rover understands.
 
-NASA engineers treat the surface of Mars as a square grid, with side length
-being a power of two, e.g., 4x4, 8x8, 16x16, etc.
+NASA engineers treat the surface of Mars as a square grid whose side length is
+a power of two, e.g., 4x4, 8x8, 16x16, etc.
 
 On the grid, the rover's location is defined by coordinates (x, y) and an
 orientation represented by one of the four compass directions (N, S, W, or E).
 Coordinates (0, 0) represent the bottom left corner of the grid.
 
-Given an initial rover's location, NASA sends commands encoded as a sequence
+Given a rover's initial location, NASA sends commands encoded as a sequence
 (string) of characters with the following meaning:
 
-* 'L' and 'R' turn the rover 90 degrees left or right, respectively;
-* 'F' and 'B' move the rover forward or backward one grid point.
+- 'L' and 'R' turn the rover 90 degrees left or right, respectively;
+- 'F' and 'B' move the rover forward or backward one grid point.
 
 ### Exercise 1
 
-For *Opportunity*, the grid had the torus (or "donut") topology, where (think
-games like Snake or Pacman) the rover vanishes on the top and reappears on the
-bottom (and visa versa for left and right).
+For *Opportunity*, the grid had a torus (or "donut") topology. As in games like
+Snake or Pac-Man, the rover vanishes at the top and reappears at the bottom
+(and vice versa for the left and right edges).
 
 > [!NOTE]
 > In a 4x4 grid, the following table shows the resulting position for a
@@ -55,19 +55,18 @@ Your task is to implement Opportunity's control software.
 ### Exercise 2
 
 For *Curiosity*, NASA decided to improve the accuracy of their grid system by
-using a Polar coordinate system. This interpretation of the grid system lends
+using a polar coordinate system. This interpretation of the grid system lends
 itself to the concept of latitude and longitude: the sphere is sliced into an
 even number of latitudes (central lines) and longitudes (evenly spaced lines
-from North to South pole). In this model, coordinates (x, y) become abstract
-representations of longitudes and latitudes.
+from the North Pole to the South Pole). In this model, coordinates (x, y)
+become abstract representations of longitudes and latitudes.
 
 While this model is closer to planets, it produces some significant edge cases
 that complicate the control system. For example, the behavior is undefined at
-the poles if we want the poles to be represented through the coordinates.
+the poles if we want the poles to be represented by coordinates.
 
-The chief engineer decided to constrain the solution to the following: the
-poles are not "on the grid," so the rover moves "over" them but never rests
-on them.
+The chief engineer imposed the following constraint: the poles are not "on the
+grid," so the rover moves "over" them but never rests on them.
 
 > [!NOTE]
 > In a 4x4 grid, the following table shows the resulting position for a
@@ -98,17 +97,17 @@ detection.
 
 Required:
 
-* [Git](https://git-scm.com/downloads)
-* A compiler with C++17 support. Choose one:
-  * [GCC](https://gcc.gnu.org/) 10+ on Linux
-  * [LLVM Clang](https://llvm.org/) 14+ on Linux
-  * [Apple Clang](https://developer.apple.com/xcode/) 17+ on macOS
-  * [MSVC](https://visualstudio.microsoft.com/) 2022 on Windows
-* [CMake 3.24 or later](https://cmake.org)
+- [Git](https://git-scm.com/downloads)
+- A compiler with C++17 support. Choose one:
+  - [GCC](https://gcc.gnu.org/) 10+ on Linux
+  - [LLVM Clang](https://llvm.org/) 14+ on Linux
+  - [Apple Clang](https://developer.apple.com/xcode/) 17+ on macOS
+  - [MSVC](https://visualstudio.microsoft.com/) 2022 on Windows
+- [CMake 3.24 or later](https://cmake.org)
 
 Optional:
 
-* [GNU Make](https://www.gnu.org/software/make/), for shorter commands. Every
+- [GNU Make](https://www.gnu.org/software/make/), for shorter commands. Every
   required task also has direct CMake and CTest commands. Make may be
   unavailable on Windows.
 
@@ -189,4 +188,4 @@ terminal.
 
 ## Credits and references
 
-* <https://kata-log.rocks/mars-rover-kata>
+- <https://kata-log.rocks/mars-rover-kata>
